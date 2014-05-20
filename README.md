@@ -6,7 +6,7 @@ C'est une application HTML5, construite avec
 ## Installation
 Installer [Git](http://git-scm.com/) (si ce n'est pas déjà fait).
 
-Clone ce repo manuellement avec git 'git clone git://github.com/jnoelEFL/spa.git'
+Clone ce repo manuellement avec git `git clone git://github.com/jnoelEFL/spa.git`
 
 ## Bien démarrer
 * Installation (si vous ne les avez pas):
@@ -16,22 +16,21 @@ Clone ce repo manuellement avec git 'git clone git://github.com/jnoelEFL/spa.git
     * Brunch plugins and Bower dependencies: `npm install & bower install`
 * Run:
     * `brunch watch --server` — watches le projet avec une compilation continue. Cela lance aussi le serveur HTTP avec [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history).
-    * 'npm start' est un raccourci de 'brunch watch --server'.
+    * `npm start` est un raccourci de `brunch watch --server`.
     * `brunch build --production` — builds minified project for production
 * Learn:
     * `public/` dir est auto-generé et servi par le serveur HTTP. Ecrire le code dans le répertoire `app/`.
-    * Place static files que vous voulez etre copiés depuis `app/assets/` vers `public/`.
+    * Place les fichiers static dans `app/assets/`. Ils seront copiés automatiquement dans `public/`.
     * [Brunch site](http://brunch.io), [Chaplin site](http://chaplinjs.org)
 
 ---------------
 
 # Pour les débutants
 
-Brunch with Chaplin is a skeleton (boilerplate) for [Brunch](http://brunch.io)
-based on [Chaplin](http://chaplinjs.org) architecture. Requires Brunch 1.7+.
+Cette base est un squelette (boilerplate) pour [Brunch](http://brunch.io)
+basé sur une architecture [Chaplin](http://chaplinjs.org). Requires Brunch 1.7+.
 
-This branch does not contain ready-to-use test environment.
-If you want take a look how tests can be used, see `with-tests` git branch.
+Pour l'instant la partie test n'est pas encore implémentée.
 
 ## Librairies incluses:
 
@@ -48,3 +47,13 @@ CSS :
 
 HTML:
 * Handlebars - pour les templates HTML des différentes vues
+
+## Documentation
+
+* [Backbone](http://backbonejs.org/)
+* [Chaplin](http://chaplinjs.org)
+* [Underscore](http://underscorejs.org/)
+* [Handlebars](http://handlebarsjs.com/)
+* [Moment](http://momentjs.com/)
+* [Bootstrap](http://getbootstrap.com/)
+* [Stylus](https://learnboost.github.io/stylus/)
