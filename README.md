@@ -4,8 +4,9 @@ C'est une application HTML5, construite avec
 [Brunch](http://brunch.io) and [Chaplin](http://chaplinjs.org).
 
 ## Installation
-Installer Git (si ce n'est pas déjà fait) [Git](http://git-scm.com/)
-Clone ce repo manuellement with git or use `brunch new gh:paulmillr/brunch-with-chaplin-js`
+Installer [Git](http://git-scm.com/) (si ce n'est pas déjà fait).
+
+Clone ce repo manuellement avec git 'git clone git://github.com/jnoelEFL/spa.git'
 
 ## Bien démarrer
 * Installation (si vous ne les avez pas):
