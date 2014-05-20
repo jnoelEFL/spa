@@ -24,7 +24,7 @@ Clone ce repo manuellement with git or use `brunch new gh:paulmillr/brunch-with-
 
 ---------------
 
-# Pour les débtants
+# Pour les débutants
 
 Brunch with Chaplin is a skeleton (boilerplate) for [Brunch](http://brunch.io)
 based on [Chaplin](http://chaplinjs.org) architecture. Requires Brunch 1.7+.
