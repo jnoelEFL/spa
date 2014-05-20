@@ -1,0 +1,23 @@
+{
+  "name": "sim-spa",
+  "version": "0.1.0",
+  "main": "public/javascripts/app.js",
+  "dependencies": {
+    "chaplin": "~1.0.0",
+    "console-polyfill": "~0.1.0",
+    "underscore": "~1.6.0",
+    "jquery": "~1.11.1",
+    "normalize-css": "~3.0.1",
+    "h5bp-helpers": "~0.1.0",
+    "moment": "~2.6.0"
+  },
+  "overrides": {
+    "backbone": {
+      "dependencies": {
+        "underscore": "*",
+        "jquery": "*"
+      },
+      "main": "backbone.js"
+    }
+  }
+}
