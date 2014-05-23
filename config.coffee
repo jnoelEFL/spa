@@ -15,6 +15,8 @@ exports.config =
           'vendor/scripts/underscore.js',
           'vendor/scripts/moment-2.6.0.js',
           'vendor/scripts/moment-2.6.0-fr.js',
+          'vendor/scripts/accounting.js',
+          'vendor/scripts/bootstrap/tooltip.js',
           'vendor/scripts/backbone.js',
           'vendor/scripts/chaplin.js',
         ]
@@ -30,4 +32,4 @@ exports.config =
   watcher:
     # If on Windows and you don't see new files / modified files, make this true
     # and restart Brunch. Slower detects, but more reliable.
-    usePolling: false
+    usePolling: true
