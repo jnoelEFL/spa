@@ -24,3 +24,23 @@ register('url', function(routeName) {
   var options = params.pop();
   return utils.reverse(routeName, params);
 });
+
+register('formatMonet', function(val) {
+  return accounting.formatMoney(val);
+});
+
+register('formatMonetLabel', function(val) {
+  return accounting.formatMoney(val, {
+    symbol: '€',
+    precision: 0,
+    thousand: ' ',
+    decimal: '.',
+    format: '%v %s'
+  });
+});
+
+register('select', function( value, options ){
+  var $el = $('<select />').html( options.fn(this) );
+  $el.find('option[value="' + value + '"]').attr({'selected':'selected'});
+  return $el.html();
+});
