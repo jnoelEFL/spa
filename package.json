@@ -11,6 +11,7 @@
   },
   "scripts": {
     "start": "brunch watch --server",
+    "build": "brunch build --production",
     "test": "brunch test"
   },
   "dependencies": {
