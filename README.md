@@ -34,19 +34,20 @@ Pour l'instant la partie test n'est pas encore implémentée.
 
 ## Librairies incluses:
 
-Javascript :
-* Backbone - 1.1.2 (Framework MVC)
-* ChaplinJS - 1.0 (Surcouche pour Backbone)
-* Underscore - 1.6.0 (Libraire JS utilisé par Backbone) 
-* JQuery - 1.11.1 (Libraire JS utilisé par Backbone) 
-* Moment - 2.6.0 (Librairie utilisé pour la gestion des dates)
+* Javascript:
+    * Backbone - 1.1.2 (Framework MVC)
+    * ChaplinJS - 1.0 (Surcouche pour Backbone)
+    * Underscore - 1.6.0 (Libraire JS utilisé par Backbone)
+    * JQuery - 1.11.1 (Libraire JS utilisé par Backbone)
+    * Moment - 2.6.0 (Librairie utilisé pour la gestion des dates)
+    * Accounting - 0.3.2 (Librairie utilisé pour le formatage des nombres)
 
-CSS :
-* Boostrap - 3.1.1 (Fichiers .less) pour la CSS générale
-* Stylus - pour les CSS spécifiques
+* CSS:
+    * Boostrap - 3.1.1 (Fichiers .less) pour la CSS générale
+    * Stylus - pour les CSS spécifiques
 
-HTML:
-* Handlebars - pour les templates HTML des différentes vues
+* HTML:
+    * Handlebars - pour les templates HTML des différentes vues
 
 ## Documentation
 
@@ -55,5 +56,6 @@ HTML:
 * [Underscore](http://underscorejs.org/)
 * [Handlebars](http://handlebarsjs.com/)
 * [Moment](http://momentjs.com/)
+* [Accounting](http://josscrowcroft.github.io/accounting.js/)
 * [Bootstrap](http://getbootstrap.com/)
 * [Stylus](https://learnboost.github.io/stylus/)
