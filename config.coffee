@@ -33,3 +33,30 @@ exports.config =
     # If on Windows and you don't see new files / modified files, make this true
     # and restart Brunch. Slower detects, but more reliable.
     usePolling: true
+
+  keyword:
+    # file filter
+    filePattern: /\.(js|css|html)$/
+
+    # Extra files to process which `filePattern` wouldn't match
+    # extraFiles:
+
+    # By default keyword-brunch has these keywords:
+    #     {!version!}, {!name!}, {!date!}, {!timestamp!}
+    # using information from package.json
+    map:
+      test: "12"
+
+  plugins:
+    gzip:
+      paths:
+        javascript: 'javascripts'
+        stylesheet: 'stylesheets'
+      removeOriginalFiles: false
+      renameGzipFilesToOriginalFiles: false
+
+    uglify:
+      mangle: false
+      compress:
+        global_defs:
+          DEBUG: false
