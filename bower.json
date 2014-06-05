@@ -9,7 +9,8 @@
     "jquery": "~1.11.1",
     "normalize-css": "~3.0.1",
     "h5bp-helpers": "~0.1.0",
-    "moment": "~2.6.0"
+    "moment": "~2.6.0",
+    "accounting": "~0.3.2"
   },
   "overrides": {
     "backbone": {
