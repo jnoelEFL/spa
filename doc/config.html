@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><title>config</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="config"><meta name="groc-project-path" content="config.coffee"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path">config.coffee</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="configuration-brunch">Configuration Brunch</h1></div></div></div><div class="segment"><div class="code"><div class="wrapper"><span class="nv">exports.config =</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>See https://github.com/brunch/brunch/blob/stable/docs/config.md for documentation.</p></div></div><div class="code"><div class="wrapper">  <span class="nv">files:</span>
+    <span class="nv">javascripts:</span>
+      <span class="nv">joinTo:</span>
+        <span class="s">&#39;javascripts/app.js&#39;</span><span class="o">:</span> <span class="sr">/^app/</span>
+        <span class="s">&#39;javascripts/vendor.js&#39;</span><span class="o">:</span> <span class="sr">/^vendor/</span>
+      <span class="nv">order:</span>
+        <span class="nv">before: </span><span class="p">[</span>
+          <span class="s">&#39;vendor/scripts/console-polyfill.js&#39;</span><span class="p">,</span>
+          <span class="s">&#39;vendor/scripts/jquery.js&#39;</span><span class="p">,</span>
+          <span class="s">&#39;vendor/scripts/underscore.js&#39;</span><span class="p">,</span>
+          <span class="s">&#39;vendor/scripts/moment-2.6.0.js&#39;</span><span class="p">,</span>
+          <span class="s">&#39;vendor/scripts/moment-2.6.0-fr.js&#39;</span><span class="p">,</span>
+          <span class="s">&#39;vendor/scripts/accounting.js&#39;</span><span class="p">,</span>
+          <span class="s">&#39;vendor/scripts/bootstrap/tooltip.js&#39;</span><span class="p">,</span>
+          <span class="s">&#39;vendor/scripts/backbone.js&#39;</span><span class="p">,</span>
+          <span class="s">&#39;vendor/scripts/chaplin.js&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+
+    <span class="nv">stylesheets:</span>
+      <span class="nv">joinTo:</span>
+        <span class="s">&#39;stylesheets/app.css&#39;</span><span class="o">:</span> <span class="sr">/^app|bootstrap\.less/</span>
+
+    <span class="nv">templates:</span>
+      <span class="nv">joinTo: </span><span class="s">&#39;javascripts/app.js&#39;</span>
+
+
+  <span class="nv">watcher:</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>If on Windows and you don't see new files / modified files, make this true
+and restart Brunch. Slower detects, but more reliable.</p></div></div><div class="code"><div class="wrapper">    <span class="nv">usePolling: </span><span class="kc">true</span>
+
+  <span class="nv">keyword:</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>file filter</p></div></div><div class="code"><div class="wrapper">    <span class="nv">filePattern: </span><span class="sr">/\.(js|css|html)$/</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Extra files to process which <code>filePattern</code> wouldn't match
+extraFiles:</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>By default keyword-brunch has these keywords:
+    {!version!}, {!name!}, {!date!}, {!timestamp!}
+using information from package.json</p></div></div><div class="code"><div class="wrapper">    <span class="nv">map:</span>
+      <span class="nv">test: </span><span class="s">&quot;12&quot;</span>
+
+  <span class="nv">plugins:</span>
+    <span class="nv">gzip:</span>
+      <span class="nv">paths:</span>
+        <span class="nv">javascript: </span><span class="s">&#39;javascripts&#39;</span>
+        <span class="nv">stylesheet: </span><span class="s">&#39;stylesheets&#39;</span>
+      <span class="nv">removeOriginalFiles: </span><span class="kc">false</span>
+      <span class="nv">renameGzipFilesToOriginalFiles: </span><span class="kc">false</span>
+
+    <span class="nv">uglify:</span>
+      <span class="nv">mangle: </span><span class="kc">false</span>
+      <span class="nv">compress:</span>
+        <span class="nv">global_defs:</span>
+          <span class="nv">DEBUG: </span><span class="kc">false</span></div></div></div></div></body></html>

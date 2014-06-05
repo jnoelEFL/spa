@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><title>app\initialize</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="app\initialize"><meta name="groc-project-path" content="app\initialize.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app\initialize.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kd">var</span> <span class="nx">Application</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;application&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;routes&#39;</span><span class="p">);</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Lors de l'initialisation de l'application on initialise les propriétés de la fonction de formatage</p></div></div><div class="code"><div class="wrapper"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">accounting</span><span class="p">.</span><span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">currency</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">symbol</span> <span class="o">:</span> <span class="s1">&#39;€&#39;</span><span class="p">,</span>   <span class="c1">// default currency symbol is &#39;$&#39;</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;%v&#39;</span><span class="p">,</span> <span class="c1">// controls output: %s = symbol, %v = value/number (can be object: see below)</span>
+    <span class="nx">decimal</span> <span class="o">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>  <span class="c1">// decimal point separator</span>
+    <span class="nx">thousand</span><span class="o">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>  <span class="c1">// thousands separator</span>
+    <span class="nx">precision</span> <span class="o">:</span> <span class="mi">0</span>   <span class="c1">// decimal places</span>
+  <span class="p">},</span>
+  <span class="nx">number</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">precision</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1">// default precision on numbers is 0</span>
+    <span class="nx">thousand</span><span class="o">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+    <span class="nx">decimal</span> <span class="o">:</span> <span class="s1">&#39;.&#39;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+  <span class="k">return</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">({</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Simulateur example application&#39;</span><span class="p">,</span>
+    <span class="nx">controllerSuffix</span><span class="o">:</span> <span class="s1">&#39;-controller&#39;</span><span class="p">,</span>
+    <span class="nx">routes</span><span class="o">:</span> <span class="nx">routes</span><span class="p">,</span>
+    <span class="nx">pushState</span><span class="o">:</span> <span class="kc">false</span>
+  <span class="p">});</span>
+<span class="p">});</span></div></div></div></div></body></html>

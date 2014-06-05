@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><title>app\lib\view-helper</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="app\lib\view-helper"><meta name="groc-project-path" content="app\lib\view-helper.js"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app\lib\view-helper.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kd">var</span> <span class="nx">utils</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./utils&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">register</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">Handlebars</span><span class="p">.</span><span class="nx">registerHelper</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">register</span><span class="p">(</span><span class="s1">&#39;with&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">context</span> <span class="o">||</span> <span class="nx">Handlebars</span><span class="p">.</span><span class="nx">Utils</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">(</span><span class="nx">context</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">options</span><span class="p">.</span><span class="nx">inverse</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">options</span><span class="p">.</span><span class="nx">fn</span><span class="p">(</span><span class="nx">context</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">register</span><span class="p">(</span><span class="s1">&#39;without&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">inverse</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">inverse</span><span class="p">;</span>
+  <span class="nx">options</span><span class="p">.</span><span class="nx">inverse</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">fn</span><span class="p">;</span>
+  <span class="nx">options</span><span class="p">.</span><span class="nx">fn</span> <span class="o">=</span> <span class="nx">inverse</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">Handlebars</span><span class="p">.</span><span class="nx">helpers</span><span class="p">[</span><span class="s1">&#39;with&#39;</span><span class="p">].</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">register</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">routeName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">[].</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="nx">params</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">reverse</span><span class="p">(</span><span class="nx">routeName</span><span class="p">,</span> <span class="nx">params</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">register</span><span class="p">(</span><span class="s1">&#39;formatMonet&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">accounting</span><span class="p">.</span><span class="nx">formatMoney</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">register</span><span class="p">(</span><span class="s1">&#39;formatMonetLabel&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">accounting</span><span class="p">.</span><span class="nx">formatMoney</span><span class="p">(</span><span class="nx">val</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">symbol</span><span class="o">:</span> <span class="s1">&#39;€&#39;</span><span class="p">,</span>
+    <span class="nx">precision</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">thousand</span><span class="o">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+    <span class="nx">decimal</span><span class="o">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;%v %s&#39;</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">register</span><span class="p">(</span><span class="s1">&#39;select&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">options</span> <span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">$el</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;select /&gt;&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span> <span class="nx">options</span><span class="p">.</span><span class="nx">fn</span><span class="p">(</span><span class="k">this</span><span class="p">)</span> <span class="p">);</span>
+  <span class="nx">$el</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;option[value=&quot;&#39;</span> <span class="o">+</span> <span class="nx">value</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="s1">&#39;selected&#39;</span><span class="o">:</span><span class="s1">&#39;selected&#39;</span><span class="p">});</span>
+  <span class="k">return</span> <span class="nx">$el</span><span class="p">.</span><span class="nx">html</span><span class="p">();</span>
+<span class="p">});</span></div></div></div></div></body></html>
