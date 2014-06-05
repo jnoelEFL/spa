@@ -1,6 +1,9 @@
 var Application = require('application');
 var routes = require('routes');
 
+/*
+* Lors de l'initialisation de l'application on initialise les propriétés de la fonction de formatage
+*/
 $(function() {
   accounting.settings = {
   currency: {

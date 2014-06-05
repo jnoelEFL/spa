@@ -2,21 +2,17 @@
 // No more vendor prefixes. http://visionmedia.github.com/nib/
 @import 'nib'
 
+// Importation des variables
+@import variables
+
 // Apply a natural box layout model to all elements.
 // http://paulirish.com/2012/box-sizing-border-box-ftw/
 *
   box-sizing: border-box
 
-  border-radius()
-    -webkit-border-radius arguments
-    -moz-border-radius arguments
-    border-radius arguments
-
   body
-    padding-top 20px
-    padding-bottom 20px
     font 101% Verdana
-    color #5a5b5d
+    color $grisf
     font-size 12px
 
   .form-control
@@ -26,13 +22,25 @@
 
   .input-group .form-control
     float right
+    width 60%
 
   .input-group[class*="col-"]
     padding-left 15px
-
+    padding-right 10px
 
   .form-horizontal .control-label
     text-align left
 
   span.pull-right
     padding-right 10px
+
+  input[type="text"]
+    border: 1px solid #cccccc
+    box-shadow: inset 1px 3px 3px 0px #bbbbbb
+    background-color: #fafafa
+
+  .panel
+    margin-bottom 10px
+
+  .panel-body
+    padding-bottom 5px

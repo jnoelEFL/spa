@@ -23,8 +23,15 @@ module.exports = Chaplin.View.extend({
    // return this;
   },
 
+/*
+* Création de la function afterRender pour la view de base
+* Cela permet de gérer les actions à effectuer après le chargement du dom (ex. initialisation des tooltips)
+*/
   afterRender: function() {},
 
+/*
+* On formate tous les input de class 'monetaire' après chaque saisie
+*/
   events: {
     'change input.monetaire': 'formatInput'
   },
